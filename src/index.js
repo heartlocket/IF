@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import BrowserRouter from 'react-router-dom/BrowserRouter';
 
 
 
@@ -113,8 +114,10 @@ class Sample2 extends React.Component {
 ReactDOM.render(
   <React.StrictMode>
     {/* <Choose1 /> */}
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Sample />
     <Sample2 />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
