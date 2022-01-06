@@ -102,7 +102,7 @@ class Sample2 extends React.Component {
       lineClass.push('red');
     }
     return(
-        <div className={lineClass.join(' ')} onClick={this.toggle.bind(this)}>{this.state.addClass ? "Written across your resting percocet face in the light of the drainedout LCD hale.  " : "You were writing too but in smaller and smaller sentences and more and more quickly until your words were like snow. "}</div>       
+        <div className={lineClass.join(' ')} onClick={this.toggle.bind(this)}>{this.state.addClass ? "Written this way across your resting percocet face in the drainedout LCD hale.  " : "You were writing too but in smaller and smaller sentences and more and more quickly until your words were like snow. "}</div>       
     );
   }
 }
