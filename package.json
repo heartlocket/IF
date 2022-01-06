@@ -1,7 +1,7 @@
 {
   "name": "interactive-fiction",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,7 +10,8 @@
     "react-dom": "^17.0.2",
     "react-native": "^0.66.3",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "homepage": "https://heartlocket.github.io/IF/"
   },
   "scripts": {
     "start": "react-scripts start",
