@@ -30,9 +30,17 @@ export default function SceneOneRoot({ onNextRoute }) {
     <div className="window" style={bgStyle} onClick={handleClick}>
       <Sample onTypingDone={() => setDisplaySample2(true)} />
       {displaySample2 && <Sample2 />}
-      <button onClick={() => onNextRoute("scene-one-branch-one")}>
-        Go to next branch
-      </button>
+      <div style={{ display: "block" }}>
+        <button onClick={() => onNextRoute("scene-one-branch-one")}>
+          choice 1
+        </button>
+        <button onClick={() => onNextRoute("scene-one-branch-two")}>
+          choice 2
+        </button>
+        <button onClick={() => onNextRoute("scene-one-branch-three")}>
+          choice 3
+        </button>
+      </div>
     </div>
   );
 }
