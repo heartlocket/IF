@@ -20,7 +20,7 @@ export default function Sample({ onTypingDone }) {
     onTypingDone();
   };
 
-  const lineClass = []; // "line"
+  const lineClass = ["sampleTextContainer"]; // "line"
   if (isPressed) {
     lineClass.push("red");
   }
@@ -29,7 +29,11 @@ export default function Sample({ onTypingDone }) {
     <div className={lineClass.join(" ")} onClick={toggle}>
       {!isPressed && hasTyped && SentenceOne}
       {!isPressed && !hasTyped && (
-        <Typist cursor={{ show: false }} onTypingDone={handleTypingDone}>
+        <Typist
+          className="typistContainer"
+          cursor={{ show: false }}
+          onTypingDone={handleTypingDone}
+        >
           {SentenceOne}
         </Typist>
       )}

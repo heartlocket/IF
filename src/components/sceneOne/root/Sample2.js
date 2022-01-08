@@ -8,7 +8,7 @@ export default function Sample2() {
     setIsPressed(!isPressed);
   };
 
-  let lineClass = []; // "line"
+  let lineClass = ["sampleTextContainer"]; // "line"
   if (isPressed) {
     lineClass.push("red");
   }
@@ -16,7 +16,7 @@ export default function Sample2() {
   return (
     <div className={lineClass.join(" ")} onClick={toggle}>
       {!isPressed && (
-        <Typist cursor={{ show: false }}>
+        <Typist className="typistContainer" cursor={{ show: false }}>
           <span>
             It had already been written that way across your resting percocet
             face in the drainedout LCD hale.
