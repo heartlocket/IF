@@ -3,20 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-
-
-
-// TEST BUILD DECEMBER
-
-// import React, { useState } from "react";
-
-
+import bg1 from './backgrounds/bg1.gif'
+import bg2 from './backgrounds/bg2.gif'
+import bg3 from './backgrounds/bg3.gif'
+import bg4 from './backgrounds/bg4.gif'
 
 
 const initialState = {}
  
-
 // function testroom1reducer(state, action) {
 //   switch (action.type) {
 //     case 'action_1':
@@ -102,19 +96,78 @@ class Sample2 extends React.Component {
       lineClass.push('red');
     }
     return(
-        <div className={lineClass.join(' ')} onClick={this.toggle.bind(this)}>{this.state.addClass ? "Written this way across your resting percocet face in the drainedout LCD hale.  " : "You were writing too but in smaller and smaller sentences and more and more quickly until your words were like snow. "}</div>       
+        <div className={lineClass.join(' ')} onClick={this.toggle.bind(this)}>{this.state.addClass ? "It had already been written that way across your resting percocet face in the drainedout LCD hale.  " : "You were writing too but in smaller and smaller sentences and more and more quickly until your words were just like the snow. "}</div>       
     );
   }
 }
-// ReactDOM.render(<App />, document.getElementById("root"));
 
+
+
+ class Window extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      bgStyle: {
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+
+      }
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+    // componentWillMount() {
+
+    //   const pictureArray = [bg1, bg2, bg3, bg4];
+    //   const randomIndex = Math.floor(Math.random() * pictureArray.length);
+    //   const selectedPicture = pictureArray[randomIndex];
+  
+    //   this.setState({
+    //     bgStyle: {
+    //       backgroundImage: `url(${selectedPicture})`,
+    //       // height: "100%",
+    //       backgroundPosition: "center",
+    //       backgroundRepeat: "no-repeat",
+    //       backgroundSize: "cover",
+    //     }
+    //   })
+  
+    // }
+    
+    handleClick() {
+      const pictureArray = [bg1, bg2, bg3, bg4];
+      const randomIndex = Math.floor(Math.random() * pictureArray.length);
+      const selectedPicture = pictureArray[randomIndex];
+      
+      this.setState({
+        bgStyle: {
+          backgroundImage: `url(${selectedPicture})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          transition: "background 4s linear",
+          
+        }
+      })
+    }    
+  
+  render() {
+   return(
+    
+    <div className="window" style={this.state.bgStyle} onClick={this.handleClick}>
+      
+      <Sample />
+      <Sample2 />
+    </div>
+   )
+  }
+ }
 
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Choose1 /> */}
-    <Sample />
-    <Sample2 />
+    <Window />
   </React.StrictMode>,
   document.getElementById('root')
 );
