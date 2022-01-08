@@ -1,179 +1,59 @@
-import React, { useState, useReducer } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import bg1 from './backgrounds/bg1.gif'
-import bg2 from './backgrounds/bg2.gif'
-import bg3 from './backgrounds/bg3.gif'
-import bg4 from './backgrounds/bg4.gif'
+import React, { useState, useReducer } from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import bg1 from "./backgrounds/bg1.gif";
+import bg2 from "./backgrounds/bg2.gif";
+import bg3 from "./backgrounds/bg3.gif";
+import bg4 from "./backgrounds/bg4.gif";
+import Sample from "./components/sceneOne/Sample1";
+import Sample2 from "./components/sceneOne/Sample2";
 
-
-const initialState = {}
- 
-// function testroom1reducer(state, action) {
-//   switch (action.type) {
-//     case 'action_1':
-//       return { ...state, first_action: action.answer };
-//     case 'action_2':
-//       return { ...state, second_action: action.answer };
-//     default: 
-//       throw new Error();
-//   }
-// }
-
-// function Choose1() {
-//   const [state, dispatch] = useReducer(testroom1reducer, initialState);
-//   return (
-//     <>
-//      <div>
-//       <h2>What are you gonna do?</h2>
-//       <button onClick={() => dispatch({type: 'action_1', answer: 'eat' })}>Eat</button>
-//       <button onClick={() => dispatch({type: 'action_1', answer: 'puke' })}>Puke</button>
-//      </div>
-//      {state.first_action !== undefined && 
-//       <>
-//         <p>You decided to {state.first_action}.</p>
-//         {state.first_action === 'puke' && 
-//           <>
-//             <h2>How are you going to clean yourself up?</h2>
-//             <button onClick={() => dispatch({type: 'action_2', answer: 'shower' })}>Shower</button>
-//             <button onClick={() => dispatch({type: 'action_2', answer: 'call mom' })}>Call Mom</button>
-//           </>
-//         }
-//       </>
-//      }
-//      {state.second_action !== undefined && 
-//       <p>You then decided to {state.second_action}.</p>
-//      }
-//     </>
-//   );
-// }
-
-// const ButtonExample = () => {
-//   const [status, setStatus] = useState(false);
-
-//   return (
-//     <div className="textline" onClick={() => 
-//     setStatus(!status)}>
-//       {`${status ? 'By the time your body was found I had already written it that way' : 'When my body is found, the snow will have fallen like a killstreak, and the world will know peace.'}`}
-      
-//     </div>
-    
-//   );
-// };
-
-class Sample extends React.Component {
+class Window extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {addClass: false}
-  }
-  toggle() {
-    this.setState({addClass: !this.state.addClass});
-  }
-  render() {
-    let lineClass = ["line"];
-    if(this.state.addClass) {
-      lineClass.push('red');
-    }
-    return(
-        <div className={lineClass.join(' ')} onClick={this.toggle.bind(this)}>{this.state.addClass ? "When my body is found, the snow will have fallen like a killstreak, and the world will know peace.  " : "By the time your body was found I had already written it that way. "}</div>       
-    );
-  }
-}
-
-class Sample2 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {addClass: false}
-  }
-  toggle() {
-    this.setState({addClass: !this.state.addClass});
-  }
-  render() {
-    let lineClass = ["line"];
-    if(this.state.addClass) {
-      lineClass.push('red');
-    }
-    return(
-        <div className={lineClass.join(' ')} onClick={this.toggle.bind(this)}>{this.state.addClass ? "It had already been written that way across your resting percocet face in the drainedout LCD hale.  " : "You were writing too but in smaller and smaller sentences and more and more quickly until your words were just like the snow. "}</div>       
-    );
-  }
-}
-
-
-
- class Window extends React.Component {
-  constructor(props) {
-    super(props)
 
     this.state = {
       bgStyle: {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-
-      }
-    }
-    this.handleClick = this.handleClick.bind(this)
+      },
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-    // componentWillMount() {
+  handleClick() {
+    const pictureArray = [bg1, bg2, bg3, bg4];
+    const randomIndex = Math.floor(Math.random() * pictureArray.length);
+    const selectedPicture = pictureArray[randomIndex];
 
-    //   const pictureArray = [bg1, bg2, bg3, bg4];
-    //   const randomIndex = Math.floor(Math.random() * pictureArray.length);
-    //   const selectedPicture = pictureArray[randomIndex];
-  
-    //   this.setState({
-    //     bgStyle: {
-    //       backgroundImage: `url(${selectedPicture})`,
-    //       // height: "100%",
-    //       backgroundPosition: "center",
-    //       backgroundRepeat: "no-repeat",
-    //       backgroundSize: "cover",
-    //     }
-    //   })
-  
-    // }
-    
-    handleClick() {
-      const pictureArray = [bg1, bg2, bg3, bg4];
-      const randomIndex = Math.floor(Math.random() * pictureArray.length);
-      const selectedPicture = pictureArray[randomIndex];
-      
-      this.setState({
-        bgStyle: {
-          backgroundImage: `url(${selectedPicture})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          transition: "background 4s linear",
-          
-        }
-      })
-    }    
-  
+    this.setState({
+      bgStyle: {
+        backgroundImage: `url(${selectedPicture})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        transition: "background 4s linear",
+      },
+    });
+  }
+
   render() {
-   return(
-    
-    <div className="window" style={this.state.bgStyle} onClick={this.handleClick}>
-      
-      <Sample />
-      <Sample2 />
-    </div>
-   )
+    return (
+      <div
+        className="window"
+        style={this.state.bgStyle}
+        onClick={this.handleClick}
+      >
+        <Sample />
+        <Sample2 />
+      </div>
+    );
   }
- }
-
+}
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Choose1 /> */}
     <Window />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
