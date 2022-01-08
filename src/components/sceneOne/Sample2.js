@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import Typist from "react-typist";
 
-export default class Sample2 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { addClass: false };
+export default function Sample2() {
+  const [isPressed, setIsPressed] = useState(false);
+
+  const toggle = () => {
+    setIsPressed(!isPressed);
+  };
+
+  let lineClass = []; // "line"
+  if (isPressed) {
+    lineClass.push("red");
   }
-  toggle() {
-    this.setState({ addClass: !this.state.addClass });
-  }
-  render() {
-    let lineClass = ["line"];
-    if (this.state.addClass) {
-      lineClass.push("red");
-    }
-    return (
-      <div className={lineClass.join(" ")} onClick={this.toggle.bind(this)}>
-        {this.state.addClass
-          ? "It had already been written that way across your resting percocet face in the drainedout LCD hale.  "
-          : "You were writing too but in smaller and smaller sentences and more and more quickly until your words were just like the snow. "}
-      </div>
-    );
-  }
+
+  return (
+    <div className={lineClass.join(" ")} onClick={toggle}>
+      {!isPressed && (
+        <Typist cursor={{ show: false }}>
+          <span>
+            It had already been written that way across your resting percocet
+            face in the drainedout LCD hale.
+          </span>
+        </Typist>
+      )}
+      {isPressed && (
+        <span>
+          You were writing too but in smaller and smaller sentences and more and
+          more quickly until your words were just like the snow.
+        </span>
+      )}
+    </div>
+  );
 }
