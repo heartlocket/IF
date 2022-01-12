@@ -17,7 +17,10 @@ code {
 .sampleTextContainer,
 .typistContainer {
   display: inline;
+  padding-right: 5px;
 }
+
+
 
 .window {
   height: 560px;
@@ -32,7 +35,7 @@ code {
 
 .line {
   /* display: inline; */
-  animation: fadeIn1 linear 1.5s;
+  /* animation: fadeIn1 linear 1.5s; */
   justify-content: center;
   position: relative;
   display: inline;
@@ -47,7 +50,7 @@ code {
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
   background-position: 100%;
-  transition: background-position 0.5s ease;
+  /* transition: background-position 0.5s ease; */
 }
 
 .line:hover {
@@ -62,7 +65,7 @@ code {
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
   background-position: 100%;
-  animation: fadeIn2 linear 1.5s;
+  /* animation: fadeIn2 linear 1.5s; */
 }
 
 /* .line.red:hover {

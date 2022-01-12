@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Typist from "react-typist";
 
 const SentenceOne = (
-  <span>
-    By the time your body was found I had already written it that way.
+  <span className="line">
+        The world is a beautiful place.  
   </span>
 );
 
@@ -38,12 +38,16 @@ export default function Sample({ onTypingDone }) {
         </Typist>
       )}
       {isPressed && (
-        <span>
-          When my <span onClick={() => alert("weee")}>body</span> is found, the
-          snow will have fallen like a killstreak, and the world will know
-          peace.
+        <span className="line">
+          Too beautiful for its own good. 
         </span>
       )}
     </div>
   );
 }
+
+{/* <span>
+When my <span onClick={() => alert("weee")}>body</span> is found, the
+snow will have fallen like a killstreak, and the world will know
+peace.
+</span> */}

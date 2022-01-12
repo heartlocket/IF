@@ -3,11 +3,11 @@ import Typist from "react-typist";
 
 const SentenceOne = (
   <span className="line">
-     By the time your body was found I had already written it that way.
+    You were writing too but in smaller and smaller sentences and more and more quickly until your words were like snow.
   </span>
 );
 
-export default function Sample2({ onTypingDone }) {
+export default function Sample3({ onTypingDone }) {
   const [isPressed, setIsPressed] = useState(false);
   const [hasTyped, setHasTyped] = useState(false);
 
@@ -39,7 +39,7 @@ export default function Sample2({ onTypingDone }) {
       )}
       {isPressed && (
         <span className="line">
-          When my body is found, the snow will have fallen like a killstreak, and the world will know peace.
+          It was written that way across your resting percocet face in the drainedout LCD hale.
         </span>
       )}
     </div>
