@@ -1,12 +1,13 @@
 {
   "name": "interactive-fiction",
   "version": "0.1.0",
-  "private": false,
+  "homepage": "https://heartlocket.github.io/if",
   "dependencies": {
     "@react-three/fiber": "^7.0.24",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "colors": "^1.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-native": "^0.66.3",
@@ -40,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
