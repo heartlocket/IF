@@ -3,5 +3,5 @@
 ## Developing Locally
 
 ```
-yarn start
+test test
 ```
