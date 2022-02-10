@@ -1,7 +1,7 @@
 {
   "name": "interactive-fiction",
   "version": "0.1.0",
-  "homepage": "https://heartlocket.github.io/if",
+  "homepage": "https://heartlocket.github.io/if/src/index.js",
   "dependencies": {
     "@react-three/fiber": "^7.0.24",
     "@testing-library/jest-dom": "^5.11.4",
